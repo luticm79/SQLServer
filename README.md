@@ -15,7 +15,6 @@ LinkedIn: http://www.linkedin.com/in/luticm
 Blog: http://luticm.blogspot.com
 Twitter: @luticm
 
-
 PS: Todos os scripts são gratuitos, você pode compartilhar e reutilizar a vontade. Tenho certeza que tem uma licença que se aplica exatamente para este cenário, mas nunca lembro as diferenças entre elas...
 PS2: *** Se der alguma merda o problema é seu! ***
 PS3: if (PS2 == true) Reporte o erro para eu tentar corrigir;
