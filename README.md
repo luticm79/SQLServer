@@ -1,7 +1,7 @@
 # SQLServer
 
 Este é um repositório que pretendo compartilhar material relacionado ao SQL Server.
-Esse material pode ser na forma de scrips T-SQL, scripts em Powershell, documentos, ou o que eu achar pertinente.
+Esse material pode ser na forma de scripts T-SQL, scripts em Powershell, documentos, ou o que eu achar pertinente.
 
 Em um primeiro momento escolhi o GitHub por conta do controle de versão e para aprender um pouco mais. 
 No futuro quem sabe pode ser até interessante fazer um branch e pull requests, até lá por favor deixe seus comentários e dicas de como eu posso melhorar.
