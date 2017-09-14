@@ -7,7 +7,7 @@
 	Blog: http://blogs.msdn.microsoft.com/luti / http://luticm.blogspot.com
 	Twitter: @luticm
 	
-	Title: Sample XE to collect waits from a specific session
+	Title: XE to collect waits from a specific session
 	Description: 
 
 	History (yyyy-mm-dd):
@@ -28,6 +28,7 @@ IF EXISTS (SELECT * FROM sys.server_event_sessions WHERE name = 'MonitorWaits')
     DROP EVENT SESSION MonitorWaits ON SERVER
 GO
 
+-- !!! Need to define the SESSION ID that will be monitored
 CREATE EVENT SESSION MonitorWaits ON SERVER
 ADD EVENT sqlos.wait_info
     (WHERE sqlserver.session_id = 54)
@@ -40,14 +41,19 @@ GO
 ALTER EVENT SESSION MonitorWaits ON SERVER STATE = START;
 GO
 
--- Execute query
+--  !!! Execute query !!!
 
 ALTER EVENT SESSION MonitorWaits ON SERVER STATE = STOP;
 GO
 
+USE tempdb
+GO
+
+-- Checking number of events collect
 SELECT COUNT (*)
 FROM sys.fn_xe_file_target_read_file(N'C:\Temp\EE_WaitStats*.xel', NULL, null, null);
 
+-- Create temporaty table to load data
 CREATE TABLE #RawEventData (
     Rowid  INT IDENTITY PRIMARY KEY,
     event_data XML);
@@ -58,7 +64,8 @@ SELECT
     CAST (event_data AS XML) AS event_data
 FROM sys.fn_xe_file_target_read_file ( N'C:\Temp\EE_WaitStats*.xel', NULL, null, null);
 
- SELECT
+-- Checking waits
+SELECT
     waits.[Wait Type],
     COUNT (*) AS [Wait Count],
     SUM (waits.[Duration]) AS [Total Wait Time (ms)],
