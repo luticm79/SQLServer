@@ -1,5 +1,8 @@
 # SQLServer
 
+This is a repository that I intend to share material related to SQL Server.
+If you want to add any information, please use the community branch.
+
 Este é um repositório que pretendo compartilhar material relacionado ao SQL Server.
 Esse material pode ser na forma de scripts T-SQL, scripts em Powershell, documentos, ou o que eu achar pertinente.
 
