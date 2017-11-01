@@ -1,5 +1,3 @@
--- Adding quick information to check later... Maybe now?
-
 /************************************************
 				QUERYING XEs
 ***********************************************/
